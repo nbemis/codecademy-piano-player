@@ -2,18 +2,18 @@
 const keys = ['c-key', 'd-key', 'e-key', 'f-key', 'g-key', 'a-key', 'b-key', 'high-c-key', 'c-sharp-key', 'd-sharp-key', 'f-sharp-key', 'g-sharp-key', 'a-sharp-key'];
 const notes = [];
 
-keys.forEach(function(key){
+keys.forEach(function (key) {
   notes.push(document.getElementById(key));
 })
 
 
 // Write named functions that change the color of the keys below
-function keyPlay(event){
-    event.style.backgroundColor = 'yellow';
+function keyPlay(event) {
+  event.style.backgroundColor = 'yellow';
 }
 
-function keyReturn(event){
-    event.style.backgroundColor = '';
+function keyReturn(event) {
+  event.style.backgroundColor = '';
 }
 
 
@@ -22,23 +22,99 @@ function keyReturn(event){
 document.onkeydown = keyBoardDown;
 document.onkeyup = keyBoardUp;
 
-function keyBoardDown(event){
+function keyBoardDown(event) {
   let myKey = event.code;
 
-  switch(myKey){
-    case 'KeyE':
+  switch (myKey) {
+    case 'KeyA':
       keyPlay(notes[0]);
+      break;
+    case 'KeyS':
+      keyPlay(notes[1]);
+      break;
+    case 'KeyD':
+      keyPlay(notes[2]);
+      break;
+    case 'KeyF':
+      keyPlay(notes[3]);
+      break;
+    case 'KeyG':
+      keyPlay(notes[4]);
+      break;
+    case 'KeyH':
+      keyPlay(notes[5]);
+      break;
+    case 'KeyJ':
+      keyPlay(notes[6]);
+      break;
+    case 'KeyK':
+      keyPlay(notes[7]);
+      break;
+    case 'KeyW':
+      keyPlay(notes[8]);
+      break;
+    case 'KeyE':
+      keyPlay(notes[9]);
+      break;
+    case 'KeyR':
+      keyPlay(notes[10]);
+      break;
+    case 'KeyT':
+      keyPlay(notes[11]);
+      break;
+    case 'KeyY':
+      keyPlay(notes[12]);
+      break;
+    default:
       break;
   }
 }
 
-function keyBoardUp(event){
+function keyBoardUp(event) {
 
   let myKey = event.code;
 
-  switch(myKey){
-    case 'KeyE':
+  switch (myKey) {
+    case 'KeyA':
       keyReturn(notes[0]);
+      break;
+    case 'KeyS':
+      keyReturn(notes[1]);
+      break;
+    case 'KeyD':
+      keyReturn(notes[2]);
+      break;
+    case 'KeyF':
+      keyReturn(notes[3]);
+      break;
+    case 'KeyG':
+      keyReturn(notes[4]);
+      break;
+    case 'KeyH':
+      keyReturn(notes[5]);
+      break;
+    case 'KeyJ':
+      keyReturn(notes[6]);
+      break;
+    case 'KeyK':
+      keyReturn(notes[7]);
+      break;
+    case 'KeyW':
+      keyReturn(notes[8]);
+      break;
+    case 'KeyE':
+      keyReturn(notes[9]);
+      break;
+    case 'KeyR':
+      keyReturn(notes[10]);
+      break;
+    case 'KeyT':
+      keyReturn(notes[11]);
+      break;
+    case 'KeyY':
+      keyReturn(notes[12]);
+      break;
+    default:
       break;
   }
 }
@@ -48,22 +124,22 @@ function keyBoardUp(event){
 
 
 // Write a named function with event handler properties
-function keyEventHandler(note){
+function keyEventHandler(note) {
 
-  note.onmousedown = function(){
+  note.onmousedown = function () {
     keyPlay(note);
   }
-  note.onmouseup = function(){
+  note.onmouseup = function () {
     keyReturn(note);
   }
 
 
   // switch(noteId){
   //   /*case 'c-key': note.keydown = function */ 
-    
+
   // }
 
-  
+
 }
 
 
@@ -99,10 +175,10 @@ let lastLyric = document.getElementById('column-optional');
 // These statements are "hiding" all the progress buttons, but the first one
 nextTwo.hidden = true;
 nextThree.hidden = true;
-startOver.hidden= true;
+startOver.hidden = true;
 
 // Write anonymous event handler property and function for the first progress button
-nextOne.onclick = function(){
+nextOne.onclick = function () {
   nextOne.hidden = true;
   nextTwo.hidden = false;
 
@@ -111,7 +187,7 @@ nextOne.onclick = function(){
 }
 
 // Write anonymous event handler property and function for the second progress button
-nextTwo.onclick = function(){
+nextTwo.onclick = function () {
   nextTwo.hidden = true;
   nextThree.hidden = false;
 
@@ -123,11 +199,11 @@ nextTwo.onclick = function(){
   noteThree.innerHTML = 'G';
   noteFour.innerHTML = 'E';
   noteFive.innerHTML = 'C';
-  noteSix.innerHTML = 'B';  
+  noteSix.innerHTML = 'B';
 }
 
 // Write anonymous event handler property and function for the third progress button
-nextThree.onclick = function(){
+nextThree.onclick = function () {
   nextThree.hidden = true;
   startOver.hidden = false;
 
@@ -149,7 +225,7 @@ nextThree.onclick = function(){
 }
 
 // This is the event handler property and function for the startOver button
-startOver.onclick = function() {
+startOver.onclick = function () {
   nextOne.hidden = false;
   startOver.hidden = true;
   wordOne.innerHTML = 'HAP-';
